@@ -4,10 +4,22 @@ namespace CodeFirst_Demo.Models;
 
 public class MyDbContext_CodeFirst : DbContext
 {
-    // 建立連線
+    
+    // 建立連線(寫死連線字串)
+    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //     => optionsBuilder.UseSqlite(@"Data Source=E:\dotnet_workspace\EntityFramework_Demo\EmpDept.sqlite");
+    
+    // 建立連線(連線字串放到 appsettings.json)
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite(@"Data Source=E:\dotnet_workspace\EntityFramework_Demo\EmpDept.sqlite");
-
+    {
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json");
+        var configuration = builder.Build();
+        var connStr = configuration.GetConnectionString("RogerSqliteConnString");
+        optionsBuilder.UseSqlite(connStr);
+    }
+    
     // 建立 Users 表格
     public DbSet<UserModel> Users { get; set; }
 
