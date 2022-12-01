@@ -4,7 +4,20 @@ namespace CodeFirst_Demo.Models;
 
 public class MyDbContext_CodeFirst : DbContext
 {
-    
+    protected MyDbContext_CodeFirst()
+    {
+        Console.BackgroundColor = ConsoleColor.Cyan;
+        Console.WriteLine($"MyDbContext_CodeFirst 預設建構式");
+        Console.ResetColor(); 
+    }
+
+    public MyDbContext_CodeFirst(DbContextOptions options) : base(options)
+    {
+        Console.BackgroundColor = ConsoleColor.Cyan;
+        Console.WriteLine($"MyDbContext_CodeFirst 1參數建構式");
+        Console.ResetColor(); 
+    }
+
     // 建立連線(寫死連線字串)
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //     => optionsBuilder.UseSqlite(@"Data Source=E:\dotnet_workspace\EntityFramework_Demo\EmpDept.sqlite");
