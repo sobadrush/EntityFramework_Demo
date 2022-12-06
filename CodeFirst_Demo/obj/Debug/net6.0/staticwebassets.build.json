@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jU2aMyVAAIF6LUfcFl9K9Bdzx08MuvucbADXzqBU7eA=",
+  "Hash": "2WvrEV7vizeA+IMU/BOa2gGtfRhgkMk7qW2WToazDm8=",
   "Source": "CodeFirst_Demo",
   "BasePath": "_content/CodeFirst_Demo",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\css\\style.css",
+      "SourceId": "CodeFirst_Demo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\",
+      "BasePath": "_content/CodeFirst_Demo",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\favicon.ico",
