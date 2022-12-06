@@ -5,6 +5,8 @@ using CodeFirst_Demo.Models;
 
 namespace CodeFirst_Demo.Controllers;
 
+[Controller]
+// [Route("[controller]")]
 public class HomeController : Controller
 {
     // DI
@@ -20,6 +22,7 @@ public class HomeController : Controller
     }
 
     [HttpGet]
+    // [Route("Index")]
     public IActionResult Index()
     {
         Console.BackgroundColor = ConsoleColor.Cyan;
@@ -35,13 +38,10 @@ public class HomeController : Controller
 
     // [controller] → 表示 HomeController 之 "Controller" 以前的字串名 
     [HttpGet]
-    [Route("[controller]/Privacy")]
+    [Route("Privacy")]
     public IActionResult Privacy()
     {
-        Console.WriteLine($"_dbContext = {_dbContext}");
-        var userModels = _dbContext.Users.ToList();
-        userModels.ForEach(userVO => Console.WriteLine(JsonSerializer.Serialize(userVO)));
-        return View(userModels);
+        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

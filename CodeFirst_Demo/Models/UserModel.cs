@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json;
 
 namespace CodeFirst_Demo.Models;
 
@@ -19,4 +20,9 @@ public class UserModel
     
     [Required]
     public int Age { get; set; }
+
+    public override string ToString()
+    {
+        return JsonSerializer.Serialize(this);
+    }
 }
