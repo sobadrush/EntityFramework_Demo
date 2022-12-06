@@ -8,20 +8,20 @@ public class MyDbContext_CodeFirst : DbContext
     {
         Console.BackgroundColor = ConsoleColor.Cyan;
         Console.WriteLine($"MyDbContext_CodeFirst 預設建構式");
-        Console.ResetColor(); 
+        Console.ResetColor();
     }
 
     public MyDbContext_CodeFirst(DbContextOptions options) : base(options)
     {
         Console.BackgroundColor = ConsoleColor.Cyan;
         Console.WriteLine($"MyDbContext_CodeFirst 1參數建構式");
-        Console.ResetColor(); 
+        Console.ResetColor();
     }
 
     // 建立連線(寫死連線字串)
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //     => optionsBuilder.UseSqlite(@"Data Source=E:\dotnet_workspace\EntityFramework_Demo\EmpDept.sqlite");
-    
+
     // 建立連線(連線字串放到 appsettings.json)
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -30,9 +30,11 @@ public class MyDbContext_CodeFirst : DbContext
             .AddJsonFile("appsettings.json");
         var configuration = builder.Build();
         var connStr = configuration.GetConnectionString("RogerSqliteConnString");
+        connStr = $"{connStr?.Split("=")[0]}={Directory.GetParent(".")}\\EmpDept.sqlite"; // 將讀取的sqlite路徑替換為當前路徑的 parent folder
+        Console.WriteLine($"連線字串 connStr = {connStr}");
         optionsBuilder.UseSqlite(connStr);
     }
-    
+
     // 建立 Users 表格
     public DbSet<UserModel> Users { get; set; }
 
