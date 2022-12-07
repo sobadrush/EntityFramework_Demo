@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2WvrEV7vizeA+IMU/BOa2gGtfRhgkMk7qW2WToazDm8=",
+  "Hash": "EEi6UJ16t9EwUoRZtw2lhSHHmSADP/drFQI2Jg+R2dI=",
   "Source": "CodeFirst_Demo",
   "BasePath": "_content/CodeFirst_Demo",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CodeFirst_Demo.bundle.scp.css"
+    },
+    {
+      "Identity": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\404.html",
+      "SourceId": "CodeFirst_Demo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\",
+      "BasePath": "_content/CodeFirst_Demo",
+      "RelativePath": "404.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\404.html"
+    },
+    {
+      "Identity": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\500.html",
+      "SourceId": "CodeFirst_Demo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\",
+      "BasePath": "_content/CodeFirst_Demo",
+      "RelativePath": "500.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\500.html"
     },
     {
       "Identity": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\css\\site.css",
