@@ -1,0 +1,22 @@
+﻿@model CodeFirst_Demo.Models.UserModel
+
+<tr>
+    @* <th scope="row">@i</th> *@
+    <th scope="row">@(Convert.ToInt32(ViewData["idx"]) + 1 + 1000)</th>
+    <td>@Model.Id</td>
+    @* <td>@Model.Name</td> *@
+    <td>@Model.UserName</td>
+    <td>@Model.Email</td>
+    <td>@Model.Age</td>
+    <td>
+        @* 具體物件 *@
+        @* @using (Html.BeginForm("DeleteUser", "User", new UserModel(Model.Id, Model.UserName), FormMethod.Post)) *@
+        
+        @* 使用匿名物件 *@
+        @using (Html.BeginForm("DeleteUser", "User", new { Id = Model.Id }, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken() // 防止CSRF(Cross-Site Request Forgery)
+            <button type="submit" class="btn-sm btn-danger">刪除</button>
+        }
+    </td>
+</tr>

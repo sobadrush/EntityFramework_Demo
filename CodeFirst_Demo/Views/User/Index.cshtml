@@ -14,27 +14,22 @@
 
 <table class="table table-bordered table-striped table-hover">
     <thead>
-        <tr>
+        <tr style="background: lightblue;">
             <th scope="col">#</th>
             <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
-            <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
+            @* <th scope="col">@Html.DisplayNameFor(model => model.Name)</th> *@
             <th scope="col">@Html.DisplayNameFor(model => model.UserName)</th>
             <th scope="col">@Html.DisplayNameFor(model => model.Email)</th>
             <th scope="col">@Html.DisplayNameFor(model => model.Age)</th>
+            <th scope="col" style="background: #fa992a;">動作</th>
         </tr>
     </thead>
     <tbody>
         @{int i = 0;}
         @foreach (var item in Model)
         {
-            <tr>
-                <th scope="row">@i</th>
-                <td>@Html.DisplayFor(modelItem => item.Id)</td>
-                <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                <td>@Html.DisplayFor(modelItem => item.UserName)</td>
-                <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                <td>@Html.DisplayFor(modelItem => item.Age)</td>
-            </tr>
+            ViewData["idx"] = i;
+            <partial name="ItemPartial" model="item" view-data="ViewData"/>
             i++;
         }
     </tbody>

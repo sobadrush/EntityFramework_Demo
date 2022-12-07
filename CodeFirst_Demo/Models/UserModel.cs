@@ -21,6 +21,16 @@ public class UserModel
     [Required]
     public int Age { get; set; }
 
+    public UserModel()
+    {
+    }
+
+    public UserModel(int id, string userName)
+    {
+        Id = id;
+        UserName = userName;
+    }
+
     public override string ToString()
     {
         return JsonSerializer.Serialize(this);
