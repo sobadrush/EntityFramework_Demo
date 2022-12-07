@@ -12,6 +12,9 @@ builder.Services.AddDbContext<MyDbContext_CodeFirst>(optionsBuilder =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// 先註冊 AddHealthChecks 方法
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,6 +32,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// 直接呼叫專案下的/healthz ,就會回傳專案的健康狀況 ref. https://ithelp.ithome.com.tw/articles/10242210
+app.MapHealthChecks("/healthz");
+
+// 以下設定會被定義在 class 中的 Annotation(Attribute-Based) 覆蓋
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
