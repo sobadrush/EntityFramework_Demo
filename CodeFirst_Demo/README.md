@@ -10,3 +10,7 @@
 | 6   | 將 DB Context 注入到 Controller                                                                  | https://davecallan.com/wp-content/uploads/2021/03/efccoreDI.png                             |
 | 7   | Model Validate：常用驗證方式(補充ASP.NET Day2的部分)                                                     | https://dotblogs.com.tw/bda605/2019/01/27/211511                                            |
 | 8   | 讚！ASP.NET MVC 開發 CRUD 客戶資訊處理系統                                                               | https://www.youtube.com/watch?v=W3NxPJRgR_o&list=PLIBUu1ASkigZyUnTglm-i_XH7h-5bcBaI&index=2 |
+| 9   | 部分檢視 Partial Views                                                                           | https://ithelp.ithome.com.tw/articles/10208664                                              |
+| 10  | 認識View - Razor基本語法                                                                           | https://ithelp.ithome.com.tw/articles/10160185                                              |
+| 11  | 從零開始的MVC開發-HtmlHelper.ActionLink以及button                                                     | https://ithelp.ithome.com.tw/articles/10188851                                              |
+| 12  | 自訂錯誤畫面 404.html 500.html                                                                     | https://dotblogs.com.tw/shadow/2018/09/03/164503                                            |
