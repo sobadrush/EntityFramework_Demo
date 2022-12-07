@@ -6,7 +6,7 @@ using CodeFirst_Demo.Models;
 namespace CodeFirst_Demo.Controllers;
 
 [Controller]
-// [Route("[controller]")]
+[Route("[controller]")]
 public class HomeController : Controller
 {
     // DI
@@ -22,7 +22,7 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    // [Route("Index")]
+    [Route("Index")]
     public IActionResult Index()
     {
         Console.BackgroundColor = ConsoleColor.Cyan;
