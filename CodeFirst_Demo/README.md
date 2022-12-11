@@ -14,3 +14,4 @@
 | 10  | 認識View - Razor基本語法                                                                           | https://ithelp.ithome.com.tw/articles/10160185                                              |
 | 11  | 從零開始的MVC開發-HtmlHelper.ActionLink以及button                                                     | https://ithelp.ithome.com.tw/articles/10188851                                              |
 | 12  | 自訂錯誤畫面 404.html 500.html                                                                     | https://dotblogs.com.tw/shadow/2018/09/03/164503                                            |
+| 13  | [Day06] Entity Framework Core 的 CodeFirst與資料庫版控 - 我與 ASP.NET Core 3 的 30天                    | https://ithelp.ithome.com.tw/articles/10240606                                              |
