@@ -1,4 +1,5 @@
 using CodeFirst_Demo.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ builder.Services.AddControllersWithViews();
 
 // 先註冊 AddHealthChecks 方法
 builder.Services.AddHealthChecks();
+
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 var app = builder.Build();
 

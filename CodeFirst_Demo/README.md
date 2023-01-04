@@ -15,3 +15,5 @@
 | 11  | 從零開始的MVC開發-HtmlHelper.ActionLink以及button                                                     | https://ithelp.ithome.com.tw/articles/10188851                                              |
 | 12  | 自訂錯誤畫面 404.html 500.html                                                                     | https://dotblogs.com.tw/shadow/2018/09/03/164503                                            |
 | 13  | [Day06] Entity Framework Core 的 CodeFirst與資料庫版控 - 我與 ASP.NET Core 3 的 30天                    | https://ithelp.ithome.com.tw/articles/10240606                                              |
+| 14  | ASP.NET Core MVC 中 _ViewStart.cshtml 及 _ViewImports.cshtml 的作用                               | https://dotblogs.com.tw/supershowwei/2020/04/06/090251                                      |
+| 15  | ASP.NET Hot Reload 自動更新                                                                      | https://stackoverflow.com/questions/53639969/net-core-mvc-page-not-refreshing-after-changes |

@@ -1,3 +1,7 @@
-﻿@{
+﻿<!-- 預設 ASP.NET Core MVC 專案開起來之後，就有產生一個 /Views/_ViewStart.cshtml  (預設所有的 cshtml 檔都會先跑本檔案 → 可做 initialize) -->
+<!-- 意思就是每一個 View 的 Layout 預設是 _Layout，所以我們有任何要在 View 執行之前執行的程式碼，可以放在 _ViewStart.cshtml 裡面 -->
+<!-- 不同的 Controller、不同的 Area，可以為其增加 _ViewStart.cshtml -->
+@{
+    Console.WriteLine("我是Global的 _ViewStart.cshtml，預設所有的 cshtml 檔都會先跑本檔案 → 可做 initialize");
     Layout = "_Layout";
 }
