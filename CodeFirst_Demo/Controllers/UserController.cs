@@ -59,6 +59,22 @@ public class UserController : Controller
         return View("~/Views/User/AddUserPage.cshtml");
     }
     
+    [HttpPost]
+    [Route("AddUser")]
+    public IActionResult AddUser(UserModel userModel)
+    {
+        Console.WriteLine(" === 進入 UserController.AddUser === ");
+        // 參考: https://www.completecsharptutorial.com/asp-net-mvc5/4-ways-to-create-form-in-asp-net-mvc.php
+        
+        // -------------------------------------------------------
+        Console.WriteLine("Request 送來準備新增的資料：");
+        Console.WriteLine($">>> userModel = {userModel}");
+        // -------------------------------------------------------
+        // 呼叫 DBContext 進行 新增
+        // -------------------------------------------------------
+        return View("~/Views/User/AddUserPage.cshtml");
+    }
+    
     // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     // public IActionResult Error()
     // {
