@@ -3,7 +3,7 @@
 @model IEnumerable<CodeFirst_Demo.Models.UserModel>
 
 @{
-    ViewBag.Title = "User";
+    ViewBag.Title = "我是 ViewBag.title: User";
     Layout = "_Layout";
 }
 
@@ -12,6 +12,8 @@
 }
 
 <h2>@ViewBag.Title</h2>
+
+<button type="button" class="btn btn-primary btn-lg" style="margin: 1rem;" onclick="location.href='@Url.Action("ToAddUserPage","User")'">新增User</button>
 
 <table class="table table-bordered table-striped table-hover">
     <thead>

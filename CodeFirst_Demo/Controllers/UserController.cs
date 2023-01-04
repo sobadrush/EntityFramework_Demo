@@ -51,6 +51,14 @@ public class UserController : Controller
         return RedirectToAction("Index");
     }
 
+    [HttpGet]
+    [Route("ToAddUserPage")]
+    public IActionResult ToAddUserPage()
+    {
+        ViewData["RefererUrl"] = Request.Headers["Referer"].ToString();
+        return View("~/Views/User/AddUserPage.cshtml");
+    }
+    
     // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     // public IActionResult Error()
     // {
