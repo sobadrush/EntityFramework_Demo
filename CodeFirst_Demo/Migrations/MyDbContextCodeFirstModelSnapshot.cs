@@ -2,7 +2,6 @@
 using CodeFirst_Demo.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,11 +9,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeFirstDemo.Migrations
 {
     [DbContext(typeof(MyDbContext_CodeFirst))]
-    [Migration("20221201172332_second")]
-    partial class second
+    partial class MyDbContextCodeFirstModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
@@ -36,6 +33,10 @@ namespace CodeFirstDemo.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Nickname")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -51,6 +52,7 @@ namespace CodeFirstDemo.Migrations
                             Age = 23,
                             Email = "test111@gmail.com.tw",
                             Name = "Roger Lo",
+                            Nickname = "",
                             UserName = "友寄隆輝"
                         },
                         new
@@ -59,6 +61,7 @@ namespace CodeFirstDemo.Migrations
                             Age = 24,
                             Email = "test222@gmail.com.tw",
                             Name = "Doraemon",
+                            Nickname = "",
                             UserName = "多啦A夢"
                         },
                         new
@@ -67,6 +70,7 @@ namespace CodeFirstDemo.Migrations
                             Age = 25,
                             Email = "test333@gmail.com.tw",
                             Name = "Pikachu",
+                            Nickname = "",
                             UserName = "皮卡丘"
                         });
                 });

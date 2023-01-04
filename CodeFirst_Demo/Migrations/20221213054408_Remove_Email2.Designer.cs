@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeFirstDemo.Migrations
 {
     [DbContext(typeof(MyDbContext_CodeFirst))]
-    [Migration("20221201163246_Initial")]
-    partial class Initial
+    [Migration("20221213054408_Remove_Email2")]
+    partial class RemoveEmail2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,10 @@ namespace CodeFirstDemo.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Nickname")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -51,6 +55,7 @@ namespace CodeFirstDemo.Migrations
                             Age = 23,
                             Email = "test111@gmail.com.tw",
                             Name = "Roger Lo",
+                            Nickname = "",
                             UserName = "友寄隆輝"
                         },
                         new
@@ -59,6 +64,7 @@ namespace CodeFirstDemo.Migrations
                             Age = 24,
                             Email = "test222@gmail.com.tw",
                             Name = "Doraemon",
+                            Nickname = "",
                             UserName = "多啦A夢"
                         },
                         new
@@ -67,6 +73,7 @@ namespace CodeFirstDemo.Migrations
                             Age = 25,
                             Email = "test333@gmail.com.tw",
                             Name = "Pikachu",
+                            Nickname = "",
                             UserName = "皮卡丘"
                         });
                 });
