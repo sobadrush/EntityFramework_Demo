@@ -21,6 +21,7 @@ public class UserModel
     public string UserName { get; set; }
     
     [DisplayName("▲Email▲")]
+    [EmailAddress]
     public string Email { get; set; }
     
     [Required]

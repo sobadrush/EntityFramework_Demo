@@ -1,3 +1,4 @@
+@using System.Collections
 @model CodeFirst_Demo.Models.UserModel;
 
 @{
@@ -5,31 +6,84 @@
     Layout = "_Layout";
 }
 
+@* 加入以下片段即可自動完成「前端檢核」 *@
+@* @section scripts{ *@
+@*     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script> *@
+@*     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script> *@
+@* } *@
+
 <h2>@ViewBag.Title</h2>
 
 @* <a href="@ViewData["RefererUrl"]">Return to client detail</a> *@
-<button type="button" class="btn btn-success btn-sm" style="margin: 1rem;" onclick="location.href='@ViewData["RefererUrl"]'">回前頁</button>
+<button type="button" class="btn btn-success btn-sm" style="margin: 1rem;" onclick="location.href='@ViewData["RefererUrl"]'">回前頁(RefererUrl)</button>
 
 <hr/>
+
+@if (ViewData.ContainsKey("errMsgs"))
+{
+    foreach (var item in (List<string>) ViewData["errMsgs"])
+    {
+        <p style="color: red;">@item</p>
+    }
+}
 
 @* 參考: https://www.completecsharptutorial.com/asp-net-mvc5/4-ways-to-create-form-in-asp-net-mvc.php *@
 @using (Html.BeginForm("AddUser", "User", FormMethod.Post))
 {
-    <h2>輸入基本資料</h2>
+    @Html.AntiForgeryToken() // 防止CSRF(Cross-Site Request Forgery)，會在表單內加入隱藏欄位
+    <h2>輸入基本資料(Html.BeginForm)</h2>
+    <div class="form-group">
+        <label for="Name">Name:</label>
+        @Html.TextBoxFor(mm => mm.Name, new { placeholder = "Enter Name", @class = "form-control" })
+    </div>
     <div class="form-group">
         <label for="UserName">UserName:</label>
         @Html.TextBoxFor(mm => mm.UserName, new { placeholder = "Enter UserName", @class = "form-control" })
     </div>
     <div class="form-group">
-        <label for="email">Email:</label>
+        <label for="Email">Email:</label>
         @Html.TextBoxFor(mm => mm.Email, new { placeholder = "Enter Email", @class = "form-control" })
     </div>
     <div class="form-group">
-        <label for="age">Age:</label>
+        <label for="Age">Age:</label>
         @Html.TextBoxFor(mm => mm.Age, new { placeholder = "Enter Age", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="Nickname">Nickname:</label>
+        @Html.TextBoxFor(mm => mm.Nickname, new { placeholder = "Enter Nickname", @class = "form-control" })
     </div>
     <button type="submit" class="btn btn-info">Submit</button>
 }
+
+<hr style="border: 3px solid black;"/>
+
+<button type="button" class="btn btn-success btn-sm" style="margin: 1rem;" onclick="location.href='/User/Index'">回前頁(/User/Index)</button>
+
+<h2>輸入基本資料(&lt;form&gt;)</h2>
+<form asp-action="AddUser" asp-controller="User" method="POST">
+    @Html.AntiForgeryToken() @* 防止CSRF(Cross-Site Request Forgery)，會在表單內加入隱藏欄位 *@
+    @* <div class="form-group"> *@
+    @*     <label for="Name">Name:</label> *@
+    @*     @Html.TextBoxFor(mm => mm.Name, new { placeholder = "Enter Name", @class = "form-control" }) *@
+    @* </div> *@
+    <div class="form-group">
+        <label for="UserName">UserName:</label>
+        @Html.TextBoxFor(mm => mm.UserName, new { placeholder = "Enter UserName", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="Email">Email:</label>
+        @Html.TextBoxFor(mm => mm.Email, new { placeholder = "Enter Email", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="Age">Age:</label>
+        @Html.TextBoxFor(mm => mm.Age, new { placeholder = "Enter Age", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="Nickname">Nickname:</label>
+        @Html.TextBoxFor(mm => mm.Nickname, new { placeholder = "Enter Nickname", @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>
 
 @* <div style="margin: 1rem;"> *@
 @*     <form action="/User/AddUser" method="POST"> *@
