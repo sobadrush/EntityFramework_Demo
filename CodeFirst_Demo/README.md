@@ -19,3 +19,4 @@
 | 15  | ASP.NET Hot Reload 自動更新                                                                      | https://stackoverflow.com/questions/53639969/net-core-mvc-page-not-refreshing-after-changes         |
 | 16  | Model Validation 前端/後端                                                                       | https://ithelp.ithome.com.tw/articles/10206683                                                      |
 | 17  | TempData 需使用 Json 存取                                                                         | https://stackoverflow.com/questions/56528508/asp-net-core-tempdata-and-redirecttoaction-not-working |
+| 18  | ASP.NET MVC 開發心得分享 (28)：深入了解 ModelState 內部細節                                                 | https://blog.miniasp.com/post/2016/03/14/ASPNET-MVC-Developer-Note-Part-28-Understanding-ModelState |
