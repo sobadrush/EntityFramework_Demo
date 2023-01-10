@@ -52,9 +52,9 @@ public class MyDbContext_CodeFirst : DbContext
         // );
         List<UserModel> userModelList = new List<UserModel>
         {
-            new UserModel { Id = 1, Name = "Roger Lo", UserName = "友寄隆輝", Email = "test111@gmail.com.tw", Age = 23 , Nickname = ""},
-            new UserModel { Id = 2, Name = "Doraemon", UserName = "多啦A夢", Email = "test222@gmail.com.tw", Age = 24 , Nickname = ""},
-            new UserModel { Id = 3, Name = "Pikachu", UserName = "皮卡丘", Email = "test333@gmail.com.tw", Age = 25 , Nickname = ""},
+            new UserModel { Id = 1, Name = "Roger Lo", UserName = "友寄隆輝", Email = "test111@gmail.com.tw", Age = "23" , Nickname = ""},
+            new UserModel { Id = 2, Name = "Doraemon", UserName = "多啦A夢", Email = "test222@gmail.com.tw", Age = "24" , Nickname = ""},
+            new UserModel { Id = 3, Name = "Pikachu", UserName = "皮卡丘", Email = "test333@gmail.com.tw", Age = "25" , Nickname = ""},
         };
 
         modelBuilder.Entity<UserModel>().HasData(userModelList);

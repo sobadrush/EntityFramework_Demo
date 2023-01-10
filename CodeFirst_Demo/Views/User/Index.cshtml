@@ -13,7 +13,15 @@
 
 <h2>@ViewBag.Title</h2>
 
-<button type="button" class="btn btn-primary btn-lg" style="margin: 1rem;" onclick="location.href='@Url.Action("ToAddUserPage","User")'">新增User</button>
+@* GET 跳頁 *@
+<button type="button" class="btn btn-outline-primary" style="margin: 1rem;" onclick="location.href='@Url.Action("AddUser","User")'">新增User(Get)</button>
+
+@* POST 跳頁 *@
+@* @using (Html.BeginForm("AddUser", "User", FormMethod.Post, new { id = "toAddUserBtn", @class = "" })) *@
+@* { *@
+@*     @Html.AntiForgeryToken() *@
+@*     <a href="javascript:document.getElementById('toAddUserBtn').submit()" class="btn btn-outline-primary">新增User(Post)</a> *@
+@* } *@
 
 <table class="table table-bordered table-striped table-hover">
     <thead>

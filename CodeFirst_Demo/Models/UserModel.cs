@@ -26,7 +26,7 @@ public class UserModel
     
     [Required]
     [DisplayName("▲Age▲")]
-    public int Age { get; set; }
+    public string Age { get; set; }
 
     [DisplayName("▲Nickname▲")]
     public string Nickname { get; set; }
