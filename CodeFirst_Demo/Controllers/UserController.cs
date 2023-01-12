@@ -37,6 +37,7 @@ public class UserController : Controller
 
     [HttpPost]
     [Route("DeleteUser")]
+    [ValidateAntiForgeryToken] // 預防跨網站攻擊 CSRF，搭配前端
     public IActionResult DeleteUser(UserModel userModel) // 也可宣告參數為: int Id
     {
         _logger.LogInformation("...進入 UserController deleteUser: id={UserModelId}...", userModel.Id);
@@ -67,14 +68,23 @@ public class UserController : Controller
         Console.WriteLine($" >>> userModel = {userModel}");
         Console.WriteLine($" >>> ModelState.IsValid: {ModelState.IsValid}");
 
+        int intAge = 0; // 先定義一個 number 去接收 TryParse 成功轉換後的值
+        if (!int.TryParse(userModel.Age, out intAge)) // 若 true，透過 out 將轉換結果存入 intAge 變數
+        {
+            ModelState.AddModelError("Age", "Age 只能為數字！");
+        }
+        
         //  >>> 使用 Model-Validation 驗證 <<< 
         // 驗證通過
         if (ModelState.IsValid)
         {
             // 呼叫 _DBContext 進行 新增
+            _dbContext.Users.Add(userModel);
+            _dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
         
+        // Model-Validation 驗證失敗
         return View("~/Views/User/AddUserPage.cshtml");
     }
 

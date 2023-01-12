@@ -20,3 +20,6 @@
 | 16  | Model Validation 前端/後端                                                                       | https://ithelp.ithome.com.tw/articles/10206683                                                      |
 | 17  | TempData 需使用 Json 存取                                                                         | https://stackoverflow.com/questions/56528508/asp-net-core-tempdata-and-redirecttoaction-not-working |
 | 18  | ASP.NET MVC 開發心得分享 (28)：深入了解 ModelState 內部細節                                                 | https://blog.miniasp.com/post/2016/03/14/ASPNET-MVC-Developer-Note-Part-28-Understanding-ModelState |
+| 19  | [C#][.Net MVC] 7.驗證參數-DataAnnotations                                                        | https://progressbar.tw/posts/130                                                                    |
+| 20  | [ASP.NET][MVC] ASP.NET MVC (5) : 資料驗證 (1) Server-side Validation                             | https://dotblogs.com.tw/regionbbs/2012/01/09/mvc_data_validation_part_1                             |
+| 21  | 認識View - Helper (@Html 系列標籤)                                                                 | https://ithelp.ithome.com.tw/articles/10160299                                                      |

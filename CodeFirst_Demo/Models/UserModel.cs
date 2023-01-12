@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json;
+using Newtonsoft.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace CodeFirst_Demo.Models;
 
@@ -13,22 +14,27 @@ public class UserModel
     public int Id { get; set; }
     
     [Required]
+    [DataType(DataType.Text)]
     [DisplayName("▲Name▲")]
     public string Name { get; set; }
     
-    [Required]
+    [Required(ErrorMessage = "UserName 為必填欄位！")]
+    [DataType(DataType.Text)]
     [Display(Name = "⌘UserName⌘")]
     public string UserName { get; set; }
     
+    [EmailAddress(ErrorMessage = "Email 欄位為必填欄位！")]
     [DisplayName("▲Email▲")]
-    [EmailAddress]
     public string Email { get; set; }
     
-    [Required]
+    [Required(ErrorMessage = "Age 欄位為必填欄位！")]
+    [DataType(DataType.Text)]
     [DisplayName("▲Age▲")]
     public string Age { get; set; }
 
-    [DisplayName("▲Nickname▲")]
+    [Required(AllowEmptyStrings = true)]
+    [DisplayFormat(ConvertEmptyStringToNull = false)]
+    [Display(Name = "▲▲Nickname▲▲")]
     public string Nickname { get; set; }
 
     public UserModel()
