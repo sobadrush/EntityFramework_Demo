@@ -9,16 +9,23 @@
     <td>@Model.Email</td>
     <td>@Model.Age</td>
     <td>
-        @* 具體物件 *@
+        @* [刪除]具體物件 *@
         @* @using (Html.BeginForm("DeleteUser", "User", new UserModel(Model.Id, Model.UserName), FormMethod.Post)) *@
         
-        @* 使用匿名物件 *@
+        @* [刪除]使用匿名物件 *@
         @* @using (Html.BeginForm("DeleteUser", "User", new { Id = Model.Id }, FormMethod.Post)) *@
         @using (Html.BeginForm("DeleteUser", "User", "", FormMethod.Post, true, new { @name=$"myForm{Model.Id}" }))
         {
             // @Html.AntiForgeryToken() // 防止CSRF(Cross-Site Request Forgery) → 等於 antiforgery = true 的設定
             <button type="submit" class="btn-sm btn-danger" onclick="return confirm('確定刪除 id=' + @Model.Id + ' 資料嗎？')">刪除</button>
             @Html.Hidden("userModel.Id", Model.Id)                                          
+        }
+        
+        @* [修改]使用匿名物件 *@
+        @using (Html.BeginForm("ModifyUser", "User", null, FormMethod.Post))
+        {
+            <button type="submit" class="btn-sm btn-warning">修改</button>
+            @Html.Hidden("userModel.Id", Model.Id)
         }
     </td>
 </tr>

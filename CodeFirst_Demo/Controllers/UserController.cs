@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Data;
+using System.Diagnostics;
 using System.Net;
 using CodeFirst_Demo.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -88,10 +89,44 @@ public class UserController : Controller
         return View("~/Views/User/AddUserPage.cshtml");
     }
 
+    [HttpPost]
+    [Route("ModifyUser")]
+    public IActionResult ModifyUser(UserModel userModel)
+    {
+        Console.WriteLine(" === 進入 UserController.ModifyUser === ");
+        Console.WriteLine($" >>> userModel = {userModel}");
+
+        var targetModel = this._dbContext.Users.First(xx => xx.Id.Equals(userModel.Id));
+        if (targetModel == null)
+        {
+            throw new Exception("無此User資料！");
+        }
+
+        return View("ModifyUser", targetModel);
+    }
+    
+    [HttpPost]
+    [Route("DoModify")]
+    public IActionResult DoModify(int userId, UserModel userModelModified)
+    {
+        var targetUserModel = _dbContext.Users.Find(userId);
+        if (targetUserModel == null)
+        {
+            throw new Exception("無此User資料！");
+        }
+        targetUserModel.Name = userModelModified.Name;
+        targetUserModel.UserName = userModelModified.Name;
+        targetUserModel.Email = userModelModified.Email;
+        targetUserModel.Age = userModelModified.Age;
+        targetUserModel.Nickname = userModelModified.Nickname;
+        _dbContext.SaveChanges();
+        return RedirectToAction("Index", "User");
+    }
+    
     // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     // public IActionResult Error()
     // {
     //     return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     // }
-    
+
 }
