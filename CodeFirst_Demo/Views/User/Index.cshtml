@@ -23,6 +23,27 @@
 @*     <a href="javascript:document.getElementById('toAddUserBtn').submit()" class="btn btn-outline-primary">新增User(Post)</a> *@
 @* } *@
 
+<div class="container">
+    <div class="row">
+        <div class="col-md form-group" style="width: 20rem; margin-bottom: 1rem; border: 1px dashed black; padding: 1rem;">
+            <h5>條件查詢</h5>
+            <form asp-action="GetUser" asp-controller="User" method="POST">
+                <label for="queryUserId" class="form-label fw-bold">UserId</label>
+                <input type="text" id="queryUserId" class="form-control" placeholder="輸入 userId 進行查詢" name="userModel.Id" value="@ViewData["UserId"]"/>
+                <label for="queryUserName" class="form-label fw-bold">UserName</label>
+                <input type="text" id="queryUserName" class="form-control" placeholder="輸入 userName 進行查詢" name="userModel.UserName" value="@ViewData["UserName"]"/>
+                <input type="submit" class="btn btn-outline-dark" style="margin-top: 1rem;" value="查詢"/>
+            </form>
+        </div>
+        <div class="col-md">
+          Column
+        </div>
+        <div class="col-md">
+          Column
+        </div>
+    </div>
+</div>
+
 <table class="table table-bordered table-striped table-hover">
     <thead>
         <tr style="background: lightblue; text-align: center;">

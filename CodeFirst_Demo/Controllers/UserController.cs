@@ -1,11 +1,6 @@
-﻿using System.Data;
-using System.Diagnostics;
-using System.Net;
-using CodeFirst_Demo.Models;
+﻿using CodeFirst_Demo.Models;
+using CodeFirst_Demo.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Newtonsoft.Json;
 
 namespace CodeFirst_Demo.Controllers;
 
@@ -19,21 +14,38 @@ public class UserController : Controller
     // DI
     private readonly MyDbContext_CodeFirst _dbContext;
 
-    public UserController(ILogger<UserController> logger, MyDbContext_CodeFirst dbContext)
+    // DI
+    private readonly IUserService _userService;
+
+    public UserController(ILogger<UserController> logger, MyDbContext_CodeFirst dbContext, IUserService userService)
     {
         _logger = logger;
         _dbContext = dbContext;
+        _userService = userService;
     }
 
-    // GET
     [HttpGet]
     [Route("Index")]
     public IActionResult Index()
     {
         _logger.LogInformation("...進入 UserController Index...");
         _logger.LogInformation("...查詢所有 Users...");
-        var userModels = _dbContext.Users.ToList();
+        // var userModels = _dbContext.Users.ToList();
+        var userModels = _userService.GetAllUsers();
         return View(userModels);
+    }
+
+    [HttpPost]
+    [Route("GetUser")]
+    public IActionResult GetUser(UserModel userModel)
+    {
+        _logger.LogInformation("...進入 UserController GetUser...");
+        _logger.LogInformation("...查詢條件: {UserModel}...", userModel);
+        // var targetUserModel = _userService.FindByPrimaryKey(userModel.Id);
+        var targetUserModel = _userService.FindByCondition(userModel);
+        ViewData["userId"] = userModel.Id;
+        ViewData["UserName"] = userModel.UserName;
+        return View("Index", new List<UserModel?>() { targetUserModel });
     }
 
     [HttpPost]
@@ -128,5 +140,4 @@ public class UserController : Controller
     // {
     //     return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     // }
-
 }

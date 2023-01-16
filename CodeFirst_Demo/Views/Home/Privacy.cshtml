@@ -1,9 +1,11 @@
 ﻿@model IEnumerable<CodeFirst_Demo.Models.UserModel>
 
 @{
-    Layout = "MyLayout";
+    Layout = "MyLayout"; // 使用在 Home 目錄下的 MyLayout.cshtml
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
+<br/>
 
+@Html.ActionLink("回前頁(ActionLink)", "Index", "User", "", new { @class="btn btn-outline-secondary" })
 <p>Use this page to detail your site's privacy policy.</p>

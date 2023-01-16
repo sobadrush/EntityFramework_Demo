@@ -1,4 +1,5 @@
 using CodeFirst_Demo.Models;
+using CodeFirst_Demo.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,7 +17,16 @@ builder.Services.AddControllersWithViews();
 // 先註冊 AddHealthChecks 方法
 builder.Services.AddHealthChecks();
 
+// 搭配  Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation 套件，熱部署
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+// 註冊服務
+// 1. Singleton: 整個 Process 只建立一個 Instance，任何時候都共用它。
+// 2. Scoped: 在網頁 Request 處理過程(指接到瀏覽器請求到回傳結果前的執行期間)共用一個 Instance。
+// 3. Transient: 每次要求元件時就建立一個新的，永不共用。
+// 不能在 Singleton 建構式引進註冊為 Scoped 的服務 (DbContext 則屬 Scoped)
+// (ref. https://blog.darkthread.net/blog/aspnetcore-use-scoped-in-singleton/)
+builder.Services.AddTransient<IUserService, UserService>();
 
 var app = builder.Build();
 
