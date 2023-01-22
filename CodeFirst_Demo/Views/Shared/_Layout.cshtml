@@ -108,9 +108,13 @@
                 <div style="border:1px gray dashed; width: 150%; padding:1rem;">
                     <h2>我是content區</h2>
                     <hr/>
+                    
+                    @* 設成true時，檢視中沒有定義此 Section 的值，那網頁就會掛掉 *@
+                    @* @await RenderSectionAsync("myVueSection", required: false) *@ @*也可用此寫法*@
+                    @RenderSection("myVueSection", required: false)
+                    
                     @RenderBody()
                 </div>
-
             </div>
         </div>
 

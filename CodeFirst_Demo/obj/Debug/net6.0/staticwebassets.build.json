@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EEi6UJ16t9EwUoRZtw2lhSHHmSADP/drFQI2Jg+R2dI=",
+  "Hash": "dmDwJTBmD9D8mMyhLd84sETzy/MKYKcZzzsPNCCIzhc=",
   "Source": "CodeFirst_Demo",
   "BasePath": "_content/CodeFirst_Demo",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\js\\vue3.js",
+      "SourceId": "CodeFirst_Demo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\",
+      "BasePath": "_content/CodeFirst_Demo",
+      "RelativePath": "js/vue3.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\vue3.js"
     },
     {
       "Identity": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",

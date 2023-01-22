@@ -6,6 +6,11 @@
     
 }
 
+@section myVueSection {
+    @* @Url.Content: 將相對路徑轉為絕對路徑 *@
+    <script src="@Url.Content("/js/vue3.js")" type="text/javascript"></script>
+}
+
 <div class="text-center">
     <h1 class="display-4">@ViewData["Title"]</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
@@ -13,3 +18,18 @@
     <p>@ViewBag.testB</p>
     <p>@ViewData["testC"]</p>
 </div>
+
+<div id="app">
+   Vue.js - {{ message }}
+</div>
+
+<script>
+    const { createApp } = Vue
+    createApp({
+        data() {
+          return {
+            message: 'Hello Vue!'
+          }
+        }
+    }).mount('#app')
+</script>
