@@ -2040,19 +2040,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/roger/.nuget/packages/": {}
+    "C:\\Users\\frank\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/roger/Desktop/Program-workspace/dotnet_workspace/EntityFramework_Demo/CodeFirst_Demo/CodeFirst_Demo.csproj",
+      "projectUniqueName": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\CodeFirst_Demo.csproj",
       "projectName": "CodeFirst_Demo",
-      "projectPath": "/Users/roger/Desktop/Program-workspace/dotnet_workspace/EntityFramework_Demo/CodeFirst_Demo/CodeFirst_Demo.csproj",
-      "packagesPath": "/Users/roger/.nuget/packages/",
-      "outputPath": "/Users/roger/Desktop/Program-workspace/dotnet_workspace/EntityFramework_Demo/CodeFirst_Demo/obj/",
+      "projectPath": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\CodeFirst_Demo.csproj",
+      "packagesPath": "C:\\Users\\frank\\.nuget\\packages\\",
+      "outputPath": "E:\\dotnet_workspace\\EntityFramework_Demo\\CodeFirst_Demo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/roger/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\frank\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2118,7 +2118,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/roger/.dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
