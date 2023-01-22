@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     ViewData["testA"] = "我是 Index.cshtml 裡面的 Razor 的 ViewData";
+
+    Layout = "_Layout"; // 個頁面預設載入 shared/ 目錄下的 _shared.cshtml 當作 layout-template
+    
 }
 
 <div class="text-center">
