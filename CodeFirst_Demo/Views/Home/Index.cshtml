@@ -19,17 +19,45 @@
     <p>@ViewData["testC"]</p>
 </div>
 
-<div id="app">
-   Vue.js - {{ message }}
+<div id="app" style="border: 1px solid black; padding: 3px;">
+    
+    <p v-bind:style="[colorFlag ? myStyleObjRed : myStyleObjGreen]">Vue.js - {{ message }}</p>
+    <br/>
+    <button type="button" class="btn btn-outline-dark" @@click="greeting">Greeting Message</button>
+    <br/>
+    <button type="button" class="btn btn-outline-dark" @@click="chgColor">Change Msg Color ({{ colorFlag }})</button>
 </div>
 
 <script>
     const { createApp } = Vue
     createApp({
         data() {
-          return {
-            message: 'Hello Vue!'
-          }
+            return {
+                myStyleObjRed: {
+                    color: 'red',
+                    fontSize: '30px',
+                },
+                myStyleObjGreen: {
+                    color: 'green',
+                    fontSize: '30px',
+                },
+                colorFlag: true,
+                message: 'Hello Vue!'
+            }
+        },
+        methods: {
+            greeting(event) {
+                // `this` inside methods points to the current active instance
+                alert(`Hello ${this.message}!`)
+                // `event` is the native DOM event
+                if (event) {
+                    alert(event.target.tagName)
+                }
+            },
+            chgColor(event) {
+                event.stopPropagation();
+                this.colorFlag = !this.colorFlag;
+            }
         }
-    }).mount('#app')
+}).mount('#app')
 </script>
